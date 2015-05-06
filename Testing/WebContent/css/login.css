@@ -1,0 +1,158 @@
+html {
+	height: 100%;
+}
+body {
+	margin: 0;
+	font: 11px/14px Arial, sans-serif;
+	height: 100%;
+	min-width: 986px;
+}
+img {
+	border: none;
+	display: block;
+}
+a:focus {
+	outline:none;
+}
+form {
+	margin: 0;
+	padding: 0;
+}
+.page {
+	background: url(../images/top-bg.jpg) no-repeat 50% 0;
+	min-height: 100%;
+}
+* html .page {
+	height: 100%;
+}
+#main {
+	margin: 0 auto;
+	padding: 0 0 20px;
+}
+/* header start */
+#header {
+	width: 986px;
+	height: 141px;
+	position: relative;
+}
+/* logo */
+.logo {
+	position: absolute;
+	top: 9px;
+	left: 2px;
+	background: url(../images/apsp_logo.gif) no-repeat;
+	width: 300px;
+	height: 46px;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+/* header text and links */
+.log-out {
+	float: right;
+	text-decoration: none;
+	font-size: 11px;
+	line-height: 14px;
+	color: #fff;
+	display: inline;
+	margin: 16px 16px 0 0;
+}
+.log-out:hover,
+.edit-tabs:hover,
+.top-nav li a:hover {
+	text-decoration: underline;
+}
+
+/* top navigation start */
+
+
+
+/* top navigation end */
+
+/* main navigation start */
+
+/* active state */
+
+/* main navigation end */
+/* subnavigation start */
+/* subnavigation end */
+/* header end */
+
+/* main container start */
+
+/* left column start */
+
+/* side navigation start */
+
+/* side navigation end */
+/* left column end */
+
+/* right column start */
+
+/* top tools */
+.top-area {
+	overflow: hidden;
+	width: 100%;
+}
+.top-main-area {
+	padding: 0 0 6px;
+
+op-area .input-search {
+	float: right;
+	color: #aabbcd;
+	font: 11px/14px Arial, sans-serif;
+	width: 99px;
+	padding: 2px 5px 1px;
+	margin: 0;
+}
+.top-main-area .btn-search,
+.top-main-area .btn-sfu,
+.top-main-area .input-search,
+.top-main-area .case {
+	float: left;
+}
+.top-main-area .btn-search {
+	background: url(../images/btn-search-2.gif) no-repeat;
+	margin: 1px 0 0;
+}
+.top-main-area .input-search {
+	margin-left: 6px;
+}
+/* border area */
+
+.box {
+	background-color: #fff;
+	border: 1px solid #bbc9d7;
+	width: 700px;
+	margin: 0 0 0 6px;
+	padding: 6px 0 11px 8px;
+}
+.box h1 {
+	margin: 1px 0 0 3px;
+	color: #264467;
+	font-size: 22px;
+	line-height: 25px;
+	font-weight: bold;
+}
+.help {
+	float: right;
+	color: #31557e;
+	font-size: 12px;
+	line-height: 15px;
+	background: url(../images/ico-help.gif) no-repeat 0 1px;
+	padding: 0 0 0 20px;
+	margin: 3px 10px 0 0;
+	display: inline;
+}
+.help span {
+	color: #b4b4b4;
+}
+.help span a {
+	text-decoration: none;
+	color: #aabbcd;
+	margin: 0 3px 0 3px;
+}
+.help span a:hover,
+.help span a.active {
+	color: #1d76bb;
+}
+/* Vehicle Information table start */

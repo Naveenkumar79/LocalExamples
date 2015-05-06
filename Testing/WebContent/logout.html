@@ -1,0 +1,147 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title>APSP Logout</title>
+
+<link media="all" type="text/css" rel="stylesheet" href="css/login.css" />
+<link href="css/publicPortal.css" type="text/css" rel="stylesheet" />
+
+<!-- <meta name="Description" content="Oracle Access Manager">
+	<meta name="Robot" content="none">
+	<meta name="Copyright" content="Copyright &copy; 1996-2006, Oracle. All Rights Reserved."> -->
+
+
+<script language="JavaScript">
+	function delCookie(name, path, domain) {
+		var today = new Date();
+		var deleteDate = new Date(today.getTime() - 48 * 60 * 60 * 1000); // minus 2 days
+		var cookie = name + "=" + ((path == null) ? "" : "; path=" + path)
+				+ ((domain == null) ? "" : "; domain=" + domain) + "; expires="
+				+ deleteDate;
+		document.cookie = cookie;
+	}
+
+	function delOblixCookie() {
+		// set focus to ok button
+		var isNetscape = (document.layers);
+		if (isNetscape == false || navigator.appVersion.charAt(0) >= 5) {
+			for (var i = 0; i < document.links.length; i++) {
+				if (document.links[i].href == "javascript:closeWindow()") {
+					document.links[i].focus();
+					break;
+				}
+			}
+		}
+		delCookie('ObTEMC', '/');
+		delCookie('OAMAuthnCookie', '/');
+		// in case cookieDomain is configured
+		// delete same cookie to all of subdomain
+		var subdomain;
+		var domain = new String(document.domain);
+		var index = domain.indexOf(".");
+		while (index > 0) {
+			subdomain = domain.substring(index, domain.length);
+			if (subdomain.indexOf(".", 1) > 0) {
+				delCookie('ObTEMC', '/', subdomain);
+				delCookie('OAMAuthnCookie', '/', subdomain);
+			}
+			domain = subdomain;
+			index = domain.indexOf(".", 1);
+		}
+
+		// This is a possible solution to the session timeout issue.  
+		document.cookie = "JSESSIONID=; expires=Thu, 01-Jan-70 00:00:01 GMT;path=/";
+
+	}
+
+	function getUrlVars() {
+		var vars = {};
+		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+				function(m, key, value) {
+					vars[key] = value;
+				});
+		return vars;
+	}
+
+	function displaySessionMsg() {
+		var sessionFlag = getUrlVars()['isSessionLoggedOut'];
+		var sessionDivEle = document.getElementById('sessionBlock');
+		var logoutDivEle = document.getElementById('logout');
+		var loginBtnDivEle = document.getElementById('loginBtn');
+		if (sessionFlag == "Yes") {
+			sessionDivEle.style.display = "block";
+			logoutDivEle.style.display = "none";
+			loginBtnDivEle.style.display = "block";
+		} else {
+			logoutDivEle.style.display = "block";
+			sessionDivEle.style.display = "none";
+		}
+	}
+</script>
+<script type="text/javascript">
+	function closeWindow() {
+		if (confirm("The webpage you are viewing is trying to close the window. Do you want to close this tab? ") == true) {
+			top.open('', '_self', '');
+			top.close();
+		}
+	}
+</script>
+
+</head>
+<body bgcolor="#ffffff" marginwidth="0" marginheight="0" topmargin="0"
+	leftmargin="0" onload="delOblixCookie();displaySessionMsg();">
+	<div
+		style="background: url('images/top-bg-login2.jpg') no-repeat 50% 0; height: 150px; repeat: no-repeat">
+		<div id="main">
+			<!-- header -->
+			<div id="main">
+				<!-- logo -->
+				<a href="#" class="logo">APSP</a>&nbsp;
+				<!-- top navigation -->
+				<!-- sub navigation -->
+			</div>
+		</div>
+	</div>
+	<div align="center">
+
+		<table border="0" id="table1">
+
+			<tr>
+
+				<td align="center" class="inputLabel"><br /> <br /> <br /> <br />
+					<br /> <br /> <br /> <br />
+					<div id="sessionBlock" style="display: none;">Your Session is
+						timed out. Please re-login again.</div>
+					<div id="logout" style="display: block;">
+						<p>You have been successfully logged out.</p>
+					</div>
+					<p>For security reasons, please close the browser window.</p>
+					<table>
+						<tr>
+							<td>
+								<div id="loginBtn" style="display: none;">
+									<a href="https://10.3.17.134:7902/apsp/paa.portal"><img
+										border="0" alt="Login" src="images/btn-logIn.gif"></a>
+								</div>
+							</td>
+							<td>
+								<div>
+									<a href="javascript:closeWindow()"
+										onMouseOver="self.status='Close the browser window.'; return true"><img
+										tabindex="1" border="0" alt="Close the browser window."
+										src="images/btn-close.gif"></a>
+								</div>
+							</td>
+						</tr>
+					</table></td>
+				<td></td>
+
+			</tr>
+
+		</table>
+	</div>
+</body>
+</html>

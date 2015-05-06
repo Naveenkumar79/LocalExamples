@@ -1,0 +1,7 @@
+http://sa2apsp23dev.sa2apsp.com:7777/oam_logout_success
+
+http://sa2apsp23dev.sa2apsp.com:7777/apsp/j_spring_security_logout
+
+http://sa2apsp23dev.sa2apsp.com:14100/oam/server/logout
+
+end_url
